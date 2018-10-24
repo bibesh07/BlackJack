@@ -22,4 +22,4 @@ ways:
     The order does not matter. For examples, get 13 points on “A + 2 + K “ and “K + 2 + A”
   </li>
 </ol>
-![alt text](https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
+!(https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
