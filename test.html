@@ -1,498 +1,95 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Blackjack</title>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
-    </script>
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.css">
-    <style type="text/css">
-        #board {
-            background-image: url('https://www.clowerweb.com/cors/blackjack/table.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            min-height: 500px;
-        }
-
-        .flash-button {
-            background: #ff416c;
-            padding: 5px 10px;
-            color: #fff;
-            border: none;
-            animation-name: flash;
-            animation-duration: 1s;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            cursor: pointer;
-            height: 194px;
-            width: 271px;
-        }
-
-        .card {
-            margin-top: 45%;
-        }
-
-        @keyframes flash {
-            0% {
-                opacity: 1.0;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 1.0;
-            }
-        }
-
-        .scoreBoard {
-            font-family: 'Audiowide', cursive;
-            background: linear-gradient(to right, #00b4db, #0083b0);
-            color: white;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h2 style="font-family: 'Monoton', cursive; margin-top:3px; color: #009fff;">
-                <i class="fas fa-dollar-sign"></i>
-                <i class="fas fa-money-bill-wave"></i>
-                &nbsp; Welcome to Black Jack Casino &nbsp;
-                <i class="fas fa-money-bill-wave"></i>
-                <i class="fas fa-dollar-sign"></i>
-            </h2>
-            <hr/>
-            <button class="flash-button animated bounce infinite" id="startGame" class="btn btn-success btn-lg">
-                <h4>
-                <i class="fas fa-dice"></i> Play Black Jack <i class="fas fa-dice"></i></h4>
-            </button>
+    <head>
+        <title>Blackjack</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+        </script>
+        <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.css">
+        <link rel="stylesheet" type="text/css" href="src/css/styles.css">
+        <script src="src/js/app.js"></script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 style="font-family: 'Monoton', cursive; margin-top:3px; color: #009fff;">
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    &nbsp; Welcome to Black Jack Casino &nbsp;
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                </h2>
+                <hr/>
+                <button class="flash-button" id="startGame" class="btn btn-success btn-lg">
+                    <h4>
+                    <i class="fas fa-dice"></i> Play Black Jack <i class="fas fa-dice"></i></h4>
+                </button>
+            </div>
         </div>
-    </div>
 
-    <div class="row" id="gameBoard" style="display: none;">
-        <div class="offset-1 col-md-2">
-            <div class="card scoreBoard">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Score Board (Comp)</h5>
-                    <p class="card-text" id="compScore">0</p>
+        <div class="row" id="gameBoard" style="display: none;">
+            <div class="offset-1 col-md-2">
+                <div class="card scoreBoard">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Score Board (Comp)</h5>
+                        <p class="card-text" id="compScore">0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="board">
+                    <div class="offset-4">
+                        <br/>
+                        <br/>
+                        <div id="compCards">
+                            <img id="compCard1" src="" class="rounded" alt=""> &nbsp;
+                            <img id="compCard2" src="" class="rounded" alt=""> &nbsp;
+                            <img id="compCard3" src="" class="rounded" alt=""> &nbsp;
+                            <img id="compCard4" src="" class="rounded" alt=""> &nbsp;
+                            <img id="compCard5" src="" class="rounded" alt=""> &nbsp;
+                            <img id="compCard6" src="" class="rounded" alt=""> &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="offset-4">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div id="userCards">
+                            <img id="userCard1" src="" class="rounded" alt=""> &nbsp;
+                            <img id="userCard2" src="" class="rounded" alt=""> &nbsp;
+                            <img id="userCard3" src="" class="rounded" alt=""> &nbsp;
+                            <img id="userCard4" src="" class="rounded" alt=""> &nbsp;
+                            <img id="userCard5" src="" class="rounded" alt=""> &nbsp;
+                            <img id="userCard6" src="" class="rounded" alt=""> &nbsp;
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <section class="text-center" id="options" style="display: none;">
+                        <div class="btn-group btn-group-lg" role="group">
+                            <button id="hitTheGame" class="button button-3d button-primary"><i class="fas fa-fire"></i> Hit</button>
+                            <button id="stayTheGame" class="button button-3d button-caution"><i class="fas fa-hand-paper"></i> Stay</button>
+                        </div>
+                    </section>
+                    <section class="text-center" id="gameResult" style="display: none;">
+                        <h3 id="result"></h3>
+                        <a style="color: white;" id="playAgain" class="button button-3d button-highlight"><i class="fas fa-redo"></i> Play Again</a>
+                    </section>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card scoreBoard">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Score Board (User)</h5>
+                        <p class="card-text" id="userScore">0</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div id="board">
-                <div class="offset-4">
-                    <br/>
-                    <br/>
-                    <div id="compCards">
-                        <img id="compCard1" src="" class="rounded" alt=""> &nbsp;
-                        <img id="compCard2" src="" class="rounded" alt=""> &nbsp;
-                        <img id="compCard3" src="" class="rounded" alt=""> &nbsp;
-                        <img id="compCard4" src="" class="rounded" alt=""> &nbsp;
-                        <img id="compCard5" src="" class="rounded" alt=""> &nbsp;
-                        <img id="compCard6" src="" class="rounded" alt=""> &nbsp;
-                    </div>
-                </div>
-
-                <div class="offset-4">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div id="userCards">
-                        <img id="userCard1" src="" class="rounded" alt=""> &nbsp;
-                        <img id="userCard2" src="" class="rounded" alt=""> &nbsp;
-                        <img id="userCard3" src="" class="rounded" alt=""> &nbsp;
-                        <img id="userCard4" src="" class="rounded" alt=""> &nbsp;
-                        <img id="userCard5" src="" class="rounded" alt=""> &nbsp;
-                        <img id="userCard6" src="" class="rounded" alt=""> &nbsp;
-                    </div>
-                </div>
-                <br/>
-                <br/>
-                <section class="text-center" id="options" style="display: none;">
-                    <div class="btn-group btn-group-lg" role="group">
-                        <button id="hitTheGame" class="button button-3d button-primary"><i class="fas fa-fire"></i> Hit</button>
-                        <button id="stayTheGame" class="button button-3d button-caution"><i class="fas fa-hand-paper"></i> Stay</button>
-                    </div>
-                </section>
-                <section class="text-center" id="gameResult" style="display: none;">
-                    <h3 id="result"></h3>
-                    <a style="color: white;" id="playAgain" class="button button-3d button-highlight"><i class="fas fa-redo"></i> Play Again</a>
-                </section>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card scoreBoard">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Score Board (User)</h5>
-                    <p class="card-text" id="userScore">0</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<script type="text/javascript">
-    //initializing the variables
-    let cards = [{
-            'id': 'ac',
-            'value': 1
-        }, {
-            'id': 'ad',
-            'value': 1
-        }, {
-            'id': 'ah',
-            'value': 1
-        }, {
-            'id': 'as',
-            'value': 1
-        },
-
-        {
-            'id': '2c',
-            'value': 2
-        }, {
-            'id': '2d',
-            'value': 2
-        }, {
-            'id': '2h',
-            'value': 2
-        }, {
-            'id': '2s',
-            'value': 2
-        },
-
-        {
-            'id': '3c',
-            'value': 3
-        }, {
-            'id': '3d',
-            'value': 3
-        }, {
-            'id': '3h',
-            'value': 3
-        }, {
-            'id': '3s',
-            'value': 3
-        },
-
-        {
-            'id': '4c',
-            'value': 4
-        }, {
-            'id': '4d',
-            'value': 4
-        }, {
-            'id': '4h',
-            'value': 4
-        }, {
-            'id': '4s',
-            'value': 4
-        },
-
-        {
-            'id': '5c',
-            'value': 5
-        }, {
-            'id': '5d',
-            'value': 5
-        }, {
-            'id': '5h',
-            'value': 5
-        }, {
-            'id': '5s',
-            'value': 5
-        },
-
-        {
-            'id': '6c',
-            'value': 6
-        }, {
-            'id': '6d',
-            'value': 6
-        }, {
-            'id': '6h',
-            'value': 6
-        }, {
-            'id': '6s',
-            'value': 6
-        },
-
-        {
-            'id': '7c',
-            'value': 7
-        }, {
-            'id': '7d',
-            'value': 7
-        }, {
-            'id': '7h',
-            'value': 7
-        }, {
-            'id': '7s',
-            'value': 7
-        },
-
-        {
-            'id': '8c',
-            'value': 8
-        }, {
-            'id': '8d',
-            'value': 8
-        }, {
-            'id': '8h',
-            'value': 8
-        }, {
-            'id': '8s',
-            'value': 8
-        },
-
-        {
-            'id': '9c',
-            'value': 9
-        }, {
-            'id': '9d',
-            'value': 9
-        }, {
-            'id': '9h',
-            'value': 9
-        }, {
-            'id': '9s',
-            'value': 9
-        },
-
-        {
-            'id': '10c',
-            'value': 10
-        }, {
-            'id': '10d',
-            'value': 10
-        }, {
-            'id': '10h',
-            'value': 10
-        }, {
-            'id': '10s',
-            'value': 10
-        },
-
-        {
-            'id': 'jc',
-            'value': 10
-        }, {
-            'id': 'jd',
-            'value': 10
-        }, {
-            'id': 'jh',
-            'value': 10
-        }, {
-            'id': 'js',
-            'value': 10
-        },
-
-        {
-            'id': 'qc',
-            'value': 10
-        }, {
-            'id': 'qd',
-            'value': 10
-        }, {
-            'id': 'qh',
-            'value': 10
-        }, {
-            'id': 'qs',
-            'value': 10
-        },
-
-        {
-            'id': 'kc',
-            'value': 10
-        }, {
-            'id': 'kd',
-            'value': 10
-        }, {
-            'id': 'kh',
-            'value': 10
-        }, {
-            'id': 'ks',
-            'value': 10
-        },
-    ];
-
-    selectedNumbers = [];
-    userNumbers = [];
-    compNumbers = [];
-    userCount = 2;
-
-    let compScore, userScore;
-
-    $('#playAgain').click(function() {
-        window.location.reload();
-    });
-
-    $('#startGame').click(function() {
-        $(this).hide();
-        $('#gameBoard').show();
-        for (var i = 0; i <= 1; i++) {
-            userNumbers.push(getRandomNumber());
-            compNumbers.push(getRandomNumber());
-        }
-        displayCardImages();
-        setTimeout(setScores, 4000);
-        setTimeout(showOptions, 4200);
-    });
-
-    showOptions = () => {
-        if (this.userScore == 21) {
-            userWinMessage();
-        } else {
-            $('#options').addClass("animated slideInUp");
-            $('#options').show();
-        }
-    }
-
-    //recursion if number is repeated
-    getRandomNumber = () => {
-        let randomNumber = Math.floor(Math.random() * 52);
-        if (this.selectedNumbers.filter(n => n == randomNumber).length > 0) {
-            randomNumber = getRandomNumber();
-        }
-        this.selectedNumbers.push(randomNumber);
-        return randomNumber;
-    }
-
-    displayCardImages = () => {
-        $('#compCard1').attr("src", "cards/" + cards[this.compNumbers[0]].id + '.png');
-        $('#compCard1').addClass("animated fadeInLeft");
-
-        $('#userCard1').attr("src", "cards/" + cards[this.userNumbers[0]].id + '.png');
-        $('#userCard1').addClass("animated fadeInRight delay-1s");
-
-        $('#compCard2').attr("src", "cards/back.png");
-        $('#compCard2').addClass("animated fadeInLeft delay-2s");
-
-        $('#userCard2').attr("src", "cards/" + cards[this.userNumbers[1]].id + '.png');
-        $('#userCard2').addClass("animated fadeInRight delay-3s");
-    }
-
-    setScores = () => {
-        this.compScore = cards[this.compNumbers[0]].value;
-        this.userScore = calculateScore(this.userNumbers);
-        $('#compScore').html(this.compScore);
-        $('#userScore').html(this.userScore);
-    }
-
-    $('#hitTheGame').click(function() {
-        addUserCard();
-    });
-
-    addUserCard = () => {
-        ++userCount;
-        if (this.userScore < 21) {
-            let randomNum = getRandomNumber();
-            this.userNumbers.push(randomNum);
-            this.userScore = this.calculateScore(this.userNumbers);
-            $('#userCard' + userCount).attr("src", "cards/" + cards[randomNum].id + '.png');
-            $('#userCard' + userCount).addClass("animated fadeInRight");
-        }
-
-        $('#userScore').html(this.userScore);
-        checkThatDamnScore();
-    }
-
-    checkThatDamnScore = () => {
-        if (this.userScore == 21)
-            userWinMessage();
-        if (this.userScore > 21)
-            userLoseMessage();
-    }
-
-    $('#stayTheGame').click(function() {
-        $(this).attr('disabled', true);
-        $('#hitTheGame').attr('disabled', true);
-        turnTheCard();
-        setTimeout(checkCompScore, 3000);
-    });
-
-    checkCompScore = () => {
-        if (this.compScore > this.userScore && this.compScore >= 17 && this.compScore <= 21) {
-            userLoseMessage();
-        } else {
-            let i = 2;
-            while (this.compScore < 21) {
-                ++i;
-                if (this.compScore > this.userScore && this.compScore <= 21 && this.compScore > 17) {
-                    userLoseMessage();
-                    break;
-                } else if (this.compScore > 21) {
-                    userWinMessage();
-                    break;
-                }
-                let randomNum = getRandomNumber();
-                this.compNumbers.push(randomNum);
-                $('#compCard' + i).attr("src", "cards/" + cards[randomNum].id + '.png');
-                this.compScore = this.calculateScore(this.compNumbers);
-                $('#compScore').html(this.compScore);
-            }
-            checkWinner();
-        }
-    }
-
-    checkWinner = () => {
-        if (this.compScore > this.userScore && this.compScore <= 21 && this.compScore > 17) {
-            userLoseMessage();
-        } else if (this.compScore > 21) {
-            userWinMessage();
-        }
-    }
-
-    userLoseMessage = () => {
-        $('#options').hide();
-        $('#result').html("You Lose");
-        $('#result').addClass("alert alert-danger");
-        $('#gameResult').show();
-    }
-
-    userWinMessage = () => {
-        $('#options').hide();
-        $('#result').html("You Win");
-        $('#result').addClass("alert alert-success");
-        $('#gameResult').show();
-    }
-
-    turnTheCard = () => {
-        $('#compCard2').addClass("animated flipInY");
-        $('#compCard2').attr("src", "cards/" + cards[this.compNumbers[1]].id + '.png');
-        setTimeout(calculateCompScoreAfterTurn, 2500);
-    }
-
-    calculateCompScoreAfterTurn = () => {
-        this.compScore = calculateScore(this.compNumbers);
-        $('#compScore').html(this.compScore);
-    }
-
-    calculateScore = (arr) => {
-        let otherNumbersSum;
-        let nonAceValues = arr.filter(u => u > 3);
-
-        if (nonAceValues.length == 1) {
-            otherNumbersSum = cards[nonAceValues[0]].value;
-        } else if (nonAceValues.length > 1) {
-            otherNumbersSum = nonAceValues.reduce((a, v) => a + cards[v].value, 0);
-        }
-
-        if (arr.filter(n => n <= 3).length > 0) {
-            if (otherNumbersSum > 10) {
-                return otherNumbersSum + arr.filter(n => n <= 3).length;
-            }
-            return otherNumbersSum + 11 + (arr.filter(n => n <= 3).length - 1);
-        }
-
-        return otherNumbersSum;
-    }
-</script>
-
+    </body>
 </html>

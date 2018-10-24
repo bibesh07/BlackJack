@@ -1,0 +1,43 @@
+#board {
+    background-image: url('https://www.clowerweb.com/cors/blackjack/table.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.flash-button {
+    background: #ff416c;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    height: 194px;
+    width: 271px;
+}
+
+.card {
+    margin-top: 45%;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.scoreBoard {
+    font-family: 'Audiowide', cursive;
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
+}
