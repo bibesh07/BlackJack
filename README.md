@@ -1,3 +1,4 @@
+<h1> Description </h1>
 Blackjack game built using basic components of web i.e, HTML, CSS, JavaScript-(jQ)
 User and Computer are introduced with 2 cards each and the motive of the game is to get a score higher than the computer but lower than 21. Computer's/ Dealers second card is faced backward so that user doesnt know the true score of computer.
 The rules for this games are: 
