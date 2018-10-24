@@ -28,3 +28,4 @@ ways:
 [Image 1](https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
 [Image 2](https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing)
 
+<a href="http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/"><img src="up %26 going/cover.jpg" width="75"></a>&nbsp;
