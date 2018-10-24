@@ -24,7 +24,7 @@ ways:
 </ol>
 <img src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing" alt="Sample Image"/>
 <u> Click here for images </u>
-<ul>
- <li><a src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing"> Image 1 </a></li>
- <li><a src="https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing"> Image 2 </a></li>
-</ul>
+
+ <a src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing"> Image 1 </a>
+ <a src="https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing"> Image 2 </a>
+
