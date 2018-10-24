@@ -25,7 +25,5 @@ ways:
 <img src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing" alt="Sample Image"/>
 <u> Click here for images </u>
 <br/>
-[Image 1](https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
-[Image 2](https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing)
-
-<a href="http://www.ebooks.com/1993212/you-don-t-know-js-up-going/simpson-kyle/">ds</a>&nbsp;
+<a href="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing">Image 1</a>&nbsp;
+<a href="https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing">Image 2</a>&nbsp;
