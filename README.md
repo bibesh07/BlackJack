@@ -24,7 +24,6 @@ ways:
 </ol>
 <img src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing" alt="Sample Image"/>
 <u> Click here for images </u>
-
- <a src="https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing"> Image 1 </a>
- <a src="https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing"> Image 2 </a>
+[Image 1](https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
+[Image 2](https://drive.google.com/file/d/1KBlrKJP2XLc-3Nw0wYQc_sEFCP59rLuy/view?usp=sharing)
 
