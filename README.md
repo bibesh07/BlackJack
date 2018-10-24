@@ -22,6 +22,4 @@ ways:
     The order does not matter. For examples, get 13 points on “A + 2 + K “ and “K + 2 + A”
   </li>
 </ol>
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-
-!(https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
+![Image Sample](https://drive.google.com/file/d/1O1MGrXXXQdowcrsCWE7egv4w8P9B6VwI/view?usp=sharing)
